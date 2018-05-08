@@ -4,8 +4,16 @@
 #define PORT_NUM 5555
 #define MAX_BUFFER 1024 
 
-int server_start();
-int recv_connection(int lsock);
+typedef struct server
+{
+    int lsock;
+    int csock;
+}Server;
+
+
+
+int server_start(Server *new_server);
+int recv_connection(Server *server);
 
 
 #endif
