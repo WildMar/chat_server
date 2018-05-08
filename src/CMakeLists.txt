@@ -5,7 +5,8 @@ set(SERVER_SRCS "chat_server.c"
                 "common.c"
                 "server_api.c")
 set(CLIENT_SRCS "chat_client.c"
-                "common.c")
+                "common.c"
+                "client_api.c")
 
 add_executable(chat_server ${SERVER_SRCS})
 add_executable(chat_client ${CLIENT_SRCS})

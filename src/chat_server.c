@@ -23,14 +23,15 @@ int main(void)
         {
             continue;    
         }
-        if((ret = recv_msg(csock, buffer)) == -1)
-        {
-            close(csock);
-            continue;
-        }
         
-        printf("MESSAGE: %s\n", buffer);
-        memset(buffer, 0, strlen(buffer));
+        
+        while((ret = recv_msg(csock, buffer)) > 0)
+        {
+            printf("MESSAGE: %s\n", buffer);
+            memset(buffer, 0, strlen(buffer));    
+        }
+        close(csock);
+        
         //close(csock);
     }
     return 0;

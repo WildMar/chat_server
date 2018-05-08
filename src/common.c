@@ -5,7 +5,7 @@
 
 int send_msg(int sock, char *send_buffer)
 {
-    send(sock, send_buffer, strlen(send_buffer), 0 );
+    send(sock, send_buffer, strlen(send_buffer), 0);
     printf("Message sent: %s\n", send_buffer);
     return 0;
 }
@@ -26,5 +26,5 @@ int recv_msg(int sock, char *recv_buffer)
     {
         recv_buffer[bytes_read] = '\0';
     }
-    return 0;
+    return bytes_read;
 }
